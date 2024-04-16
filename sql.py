@@ -24,9 +24,9 @@ class User(Base):
 class MysqlSqlalchemy(object):
     def __init__(self):
         # 创建mysql连接引擎
-        engine = create_engine("mysql+pymysql://root:duan2000814@localhost/flaskdb",
+        engine = create_engine("mysql+pymysql://你的数据库用户名:你的密码@localhost/你的数据库名",
                                echo=True)
-        # 创建表
+        # 创建表 
         Base.metadata.create_all(engine, checkfirst=True)
         # 创建mysql的session连接对象
         self.session = sessionmaker(bind=engine)()
